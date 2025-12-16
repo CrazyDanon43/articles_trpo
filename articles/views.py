@@ -18,7 +18,7 @@ def article_create(request):
             article = Article.objects.create(title=title, content=content)
             return redirect('article_list')
 
-    return render(request, 'articles/article_form.html', {'action': 'create'})
+    return render(request, 'articles/article_form.html')
 
 
 def article_edit(request, id):
@@ -31,4 +31,4 @@ def article_edit(request, id):
         article.save()
         return redirect('article_list')
 
-    return render(request, 'articles/article_form.html', {'article': article, 'action': 'edit'})
+    return render(request, 'articles/article_form.html', {'article': article})
